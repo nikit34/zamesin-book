@@ -930,6 +930,106 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   text-align: left;
 }
 
+/* ---------- spread (PCA-inspired two-pane) ---------- */
+/* Left figure sticks to the viewport while the right column scrolls past it,
+   PCA-style. The container declares the two lanes; both stack on mobile.
+   The spread breaks out of the reader's column width to claim the visible page
+   the way PCA does — calc-based negative margin keeps it centered while
+   filling the larger horizontal canvas. */
+.prose .spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(40px, 5vw, 88px);
+  row-gap: var(--s-6);
+  position: relative;
+  margin: var(--s-10) calc(-1 * clamp(0px, 10vw, 220px));
+  max-width: none;
+  isolation: isolate;
+}
+/* PCA-style dashed gutter framing the central column. */
+.prose .spread::before,
+.prose .spread::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  border-left: 1px dashed var(--rule);
+  z-index: -1;
+  pointer-events: none;
+}
+.prose .spread::before { left: calc(50% - 16px); }
+.prose .spread::after  { left: calc(50% + 16px); }
+
+.prose .spread__figure {
+  position: sticky;
+  top: var(--s-7);
+  align-self: start;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  max-height: calc(100dvh - var(--s-7) * 2);
+}
+.prose .spread__figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule-soft);
+  object-fit: contain;
+  max-height: 100%;
+}
+.prose .spread__caption {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: var(--ink-mute);
+  max-width: 36ch;
+}
+.prose .spread__prose {
+  min-width: 0;
+}
+.prose .spread__prose > * + * { margin-top: var(--s-5); }
+.prose .spread__prose p,
+.prose .spread__prose ul,
+.prose .spread__prose ol {
+  max-width: 52ch;
+}
+/* a quiet first-line indent inside spread prose, like an editorial book gutter */
+.prose .spread__prose > p:first-of-type {
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+/* Reading-time-aware: keep galleries inside spreads tighter */
+.prose .spread .gallery { margin: var(--s-5) 0; }
+
+@media (max-width: 1279px) {
+  .prose .spread {
+    margin-left: 0;
+    margin-right: 0;
+    column-gap: var(--s-7);
+  }
+  .prose .spread::before { left: calc(50% - 10px); }
+  .prose .spread::after  { left: calc(50% + 10px); }
+}
+
+@media (max-width: 1023px) {
+  .prose .spread {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--s-5);
+    margin: var(--s-8) 0;
+  }
+  .prose .spread::before,
+  .prose .spread::after { display: none; }
+  .prose .spread__figure {
+    position: static;
+    max-height: none;
+  }
+}
+
 /* ---------- footnotes ---------- */
 .prose .footnotes {
   margin-top: var(--s-9);

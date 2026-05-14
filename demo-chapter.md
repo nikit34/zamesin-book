@@ -60,15 +60,19 @@ The first object you need is the **work graph**. Every other moving part of AJTB
 
 > The work graph is a hierarchy of jobs a person performs in order to satisfy their needs.
 
-Take any non-trivial job and decompose it. *Buying an apartment* breaks down into *finding the apartment, securing financing, signing the contract, renovating, moving in.* Each of those breaks down again. *Renovating* contains *picking a contractor, choosing materials, surviving the contractor, surviving your partner, signing off on the final inspection.* The graph has many levels. Edges are many-to-many. A single lower-level job (*surviving the contractor*) can serve more than one higher-level job (*renovating*, *staying married*).[^math]
+::: spread [image="https://zamesin.ru/producthowto/book/content/images/2025/01/3_3.png" alt="A work graph has many nested levels — most teams stop one level above the action." caption="A graph has many nested levels. Most teams stop one level above the action — and that's where the methodology fails them."]
 
-[^math]: I want to be precise — "graph" here is the mathematical term, not the British aristocracy.
+Take any non-trivial job and decompose it. *Buying an apartment* breaks down into *finding the apartment, securing financing, signing the contract, renovating, moving in.* Each of those breaks down again. *Renovating* contains *picking a contractor, choosing materials, surviving the contractor, surviving your partner, signing off on the final inspection.*
+
+The graph has many levels. Edges are many-to-many. A single lower-level job — *surviving the contractor* — can serve more than one higher-level job: *renovating*, *staying married*.[^math]
 
 The real graph that any customer is walking through has two parents. The first is the way the people who built the solutions in their world structured those paths. The second is the choices the customer makes inside that structure. Real graphs are messy. The job of an AJTBD practitioner is to look at the mess and identify the **critical sequence** — the small subgraph that decides whether the customer becomes a paying customer or walks away.
 
-![A work graph has many nested levels. The interesting product decisions live two or three levels below where teams usually look.](https://zamesin.ru/producthowto/book/content/images/2025/01/3_3.png "A graph can have many nested levels — most teams stop one level above the action")
-
 Out of the hundreds of jobs a person performs in a year, only a handful matter for any given product. A developer building an apartment complex does not need to understand the buyer's entire life. They need to understand the critical sequence around *buying → renovating → moving in*. That is the slice of the graph where value will be either created or destroyed.
+
+:::
+
+[^math]: I want to be precise — "graph" here is the mathematical term, not the British aristocracy.
 
 ![Even when the entire graph is enormous, only a critical sequence — buying, renovating, moving in — decides whether the developer wins this customer.](https://zamesin.ru/producthowto/book/content/images/2025/01/3_5.png "From the customer's entire work graph, only the critical sequence of buying, renovating, and moving in may be valuable for the focus segment")
 

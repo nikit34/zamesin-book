@@ -121,6 +121,42 @@ function parseInlineAttrs(rest) {
   return out;
 }
 
+function spreadContainer(md) {
+  // PCA-inspired two-pane block:
+  // ::: spread [image="url" alt="..." caption="..."]
+  //   …prose with multiple paragraphs that scrolls past the figure on the left…
+  // :::
+  //
+  // On desktop the figure is sticky on the left half while the prose moves on
+  // the right half. On mobile both panes stack.
+  return [
+    'spread',
+    {
+      validate(params) {
+        return params.trim().startsWith('spread');
+      },
+      render(tokens, idx) {
+        const token = tokens[idx];
+        if (token.nesting === 1) {
+          const attrs = parseInlineAttrs(token.info.trim().slice('spread'.length));
+          const image = md.utils.escapeHtml(attrs.image || '');
+          const alt = md.utils.escapeHtml(attrs.alt || '');
+          const caption = attrs.caption ? md.utils.escapeHtml(attrs.caption) : '';
+          const captionHtml = caption ? `<figcaption class="spread__caption">${caption}</figcaption>` : '';
+          return `<aside class="spread">
+<figure class="spread__figure">
+<img src="${image}" alt="${alt}" loading="lazy" />
+${captionHtml}
+</figure>
+<div class="spread__prose">
+`;
+        }
+        return `</div>\n</aside>\n`;
+      },
+    },
+  ];
+}
+
 function calloutContainer(md) {
   return [
     'callout',
@@ -179,6 +215,7 @@ export function createMarkdown() {
   });
   md.use(markdownItContainer, ...galleryContainer(md));
   md.use(markdownItContainer, ...calloutContainer(md));
+  md.use(markdownItContainer, ...spreadContainer(md));
   skepticRule(md);
 
   function extractToc(source) {
