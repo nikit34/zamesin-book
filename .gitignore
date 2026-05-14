@@ -4,4 +4,5 @@ dist
 .vite
 .playwright-mcp
 v1-*.png
+qa-*.png
 /tmp
