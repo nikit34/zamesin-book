@@ -1521,6 +1521,9 @@ dialog.lightbox::backdrop {
   .prose .gallery[data-layout="grid"] .gallery__track {
     grid-template-columns: 1fr;
   }
+  /* When the context column collapses, the floating Contents pill is how
+     readers reach the TOC. Show it from tablet width and below. */
+  .fab { display: inline-flex; }
 }
 
 @media (max-width: 767px) {
