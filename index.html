@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#F7F4EE" />
+    <meta name="description" content="Advanced Jobs To Be Done — a methodology for building products that compound value. Chapter 1." />
+    <title>Introduction to Advanced Jobs To Be Done — Ivan Zamesin</title>
+
+    <!--
+      Type stack — all licenses free for commercial use.
+      Inter Tight   — Google Fonts, SIL OFL 1.1   https://fonts.google.com/specimen/Inter+Tight
+      Source Serif 4 — Google Fonts, SIL OFL 1.1   https://fonts.google.com/specimen/Source+Serif+4
+      JetBrains Mono — Google Fonts, Apache 2.0   https://fonts.google.com/specimen/JetBrains+Mono
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..800;1,300..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap"
+    />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#chapter-content">Skip to chapter</a>
+
+    <div class="layout">
+
+      <!-- LEFT: global nav -->
+      <aside class="rail" aria-label="Global navigation">
+        <a href="/" class="rail__brand" aria-label="Home">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M3 21 L12 3 L21 21" />
+            <path d="M7.5 14 H16.5" />
+          </svg>
+        </a>
+        <nav class="rail__nav" aria-label="Sections">
+          <a href="#" class="rail__item" data-noop title="Books">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4z" />
+              <path d="M20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z" />
+            </svg>
+            <span class="rail__label">Books</span>
+          </a>
+          <a href="#" class="rail__item" data-noop title="Canon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 4v8l4 4" />
+            </svg>
+            <span class="rail__label">Canon</span>
+          </a>
+          <a href="#" class="rail__item" data-noop title="Home">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 11 L12 4 L21 11 V20 a1 1 0 0 1-1 1 h-5 v-7 h-4 v7 H4 a1 1 0 0 1-1-1 z" />
+            </svg>
+            <span class="rail__label">Home</span>
+          </a>
+        </nav>
+        <button class="rail__search" id="rail-search" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="6" />
+            <path d="m20 20-4.3-4.3" />
+          </svg>
+          <kbd class="rail__kbd">⌘K</kbd>
+        </button>
+      </aside>
+
+      <!-- MIDDLE: contextual chapter nav -->
+      <aside class="context" aria-label="Chapter context">
+        <button class="context__toc" id="open-toc" aria-haspopup="dialog">
+          <span class="context__toc-label">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" />
+            </svg>
+            Table of contents
+          </span>
+          <span class="context__toc-meta">40 chapters</span>
+        </button>
+
+        <div class="context__part">
+          <div class="context__part-meta">
+            <span class="context__part-kicker">Part 01 · Foundations</span>
+            <span class="context__part-count">5 chapters</span>
+          </div>
+          <ol class="context__chapters" aria-label="Chapters in this Part">
+            <li class="context__chapter is-active" aria-current="true">
+              <a href="#chapter-content">
+                <span class="context__chapter-num">01</span>
+                <span class="context__chapter-title">Introduction to Advanced Jobs To Be Done</span>
+              </a>
+              <nav class="context__subnav" id="context-subnav" aria-label="Sections in this chapter">
+                <!-- populated by main.js from the rendered chapter -->
+              </nav>
+            </li>
+            <li class="context__chapter">
+              <a href="#" data-noop>
+                <span class="context__chapter-num">02</span>
+                <span class="context__chapter-title">Types of jobs and their properties</span>
+              </a>
+            </li>
+            <li class="context__chapter">
+              <a href="#" data-noop>
+                <span class="context__chapter-num">03</span>
+                <span class="context__chapter-title">The consideration set</span>
+              </a>
+            </li>
+            <li class="context__chapter">
+              <a href="#" data-noop>
+                <span class="context__chapter-num">04</span>
+                <span class="context__chapter-title">Segments and sub-segments</span>
+              </a>
+            </li>
+            <li class="context__chapter context__chapter--draft">
+              <a href="#" data-noop>
+                <span class="context__chapter-num">05</span>
+                <span class="context__chapter-title">Critical sequences <span class="context__draft">in progress</span></span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </aside>
+
+      <!-- RIGHT: chapter body -->
+      <main class="reader" id="chapter-content" tabindex="-1">
+        <header class="reader__header">
+          <div class="reader__kicker">
+            <span class="kicker">Advanced Jobs To Be Done</span>
+            <span class="kicker__sep" aria-hidden="true">·</span>
+            <span class="kicker">Part 01 · Foundations</span>
+            <span class="kicker__sep" aria-hidden="true">·</span>
+            <span class="kicker">Chapter 01</span>
+          </div>
+
+          <h1 class="reader__title">Introduction to Advanced Jobs To Be Done</h1>
+
+          <div class="reader__byline">
+            <span class="byline">
+              <span class="byline__avatar" aria-hidden="true">IZ</span>
+              <span class="byline__text">
+                <span class="byline__name">Ivan Zamesin</span>
+                <span class="byline__role">Methodology author</span>
+              </span>
+            </span>
+
+            <div class="reader__actions">
+              <button class="action" id="copy-link" aria-label="Copy link to this chapter">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 14a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07L10 6" />
+                  <path d="M15 10a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07L14 18" />
+                </svg>
+                <span class="action__label" data-default-label="Copy link">Copy link</span>
+              </button>
+            </div>
+          </div>
+
+          <details class="reader__contributors">
+            <summary>Thanks to <strong>5 contributors</strong> who helped write this chapter</summary>
+            <ul class="contributors">
+              <li>Anna K. · pre-read on the work-graph section</li>
+              <li>Daniel L. · structural edits on §3</li>
+              <li>Mark Reeves · clarified the consideration-set framing</li>
+              <li>Sarah Chen · suggested the AI-assistant interview template</li>
+              <li>Tomás Reyes · final read</li>
+            </ul>
+          </details>
+        </header>
+
+        <article class="prose">
+          <!-- @chapter-html -->
+        </article>
+
+        <footer class="reader__footer">
+          <nav class="prevnext" aria-label="Chapter navigation">
+            <a href="#" class="prevnext__item prevnext__item--prev" data-noop>
+              <span class="prevnext__dir">Previous</span>
+              <span class="prevnext__title">— Prologue</span>
+            </a>
+            <a href="#" class="prevnext__item prevnext__item--next" data-noop>
+              <span class="prevnext__dir">Next chapter</span>
+              <span class="prevnext__title">Types of jobs and their properties →</span>
+            </a>
+          </nav>
+        </footer>
+      </main>
+    </div>
+
+    <!-- TOC OVERLAY -->
+    <dialog class="toc" id="toc-dialog" aria-label="Table of contents">
+      <div class="toc__shell">
+        <header class="toc__header">
+          <div class="toc__count">
+            <span class="toc__count-big">This book has <strong>40 chapters</strong></span>
+            <span class="toc__count-sub">12 more in progress</span>
+          </div>
+          <label class="toc__subscribe">
+            <input type="checkbox" disabled />
+            <span class="toc__subscribe-track" aria-hidden="true"></span>
+            <span>Subscribe to new chapters</span>
+          </label>
+          <button class="toc__close" id="close-toc" aria-label="Close table of contents">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </header>
+
+        <div class="toc__search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="6" />
+            <path d="m20 20-4.3-4.3" />
+          </svg>
+          <input
+            type="search"
+            id="toc-search-input"
+            placeholder="Search across all chapters"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <kbd>⌘/</kbd>
+        </div>
+
+        <div class="toc__body">
+          <section class="toc__results" id="toc-results" hidden></section>
+
+          <div class="toc__contents" id="toc-contents">
+            <!-- populated by main.js -->
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- chapter metadata -->
+    <!-- @chapter-data -->
+
+    <button class="fab" id="fab-toc" aria-label="Open table of contents">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h10" />
+      </svg>
+      <span>Contents</span>
+    </button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
