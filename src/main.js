@@ -4,6 +4,7 @@ import { initScrollSpy } from './scripts/scrollspy.js';
 import { initCopyLink } from './scripts/copy-link.js';
 import { decorateChapter } from './scripts/decorate-chapter.js';
 import { restoreProgress } from './scripts/progress.js';
+import { initLightbox } from './scripts/lightbox.js';
 import { catalog } from './scripts/catalog.js';
 
 const chapterMetaEl = document.getElementById('chapter-meta');
@@ -25,6 +26,10 @@ initScrollSpy({
 
 initCopyLink({
   buttonEl: document.getElementById('copy-link'),
+});
+
+initLightbox({
+  proseEl: document.querySelector('.prose'),
 });
 
 initToc({
