@@ -933,16 +933,16 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 /* ---------- spread (PCA-inspired two-pane) ---------- */
 /* Left figure sticks to the viewport while the right column scrolls past it,
    PCA-style. The container declares the two lanes; both stack on mobile.
-   The spread breaks out of the reader's column width to claim the visible page
-   the way PCA does — calc-based negative margin keeps it centered while
-   filling the larger horizontal canvas. */
+   The spread breaks out only into the reader's own gutter (-var(--s-7) on
+   each side) so it never overlaps the sticky context column on the left and
+   never overflows the viewport on the right at any width. */
 .prose .spread {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: clamp(40px, 5vw, 88px);
+  column-gap: clamp(32px, 3.5vw, 56px);
   row-gap: var(--s-6);
   position: relative;
-  margin: var(--s-10) calc(-1 * clamp(0px, 10vw, 220px));
+  margin: var(--s-10) calc(-1 * var(--s-7));
   max-width: none;
   isolation: isolate;
 }
@@ -958,8 +958,8 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   z-index: -1;
   pointer-events: none;
 }
-.prose .spread::before { left: calc(50% - 16px); }
-.prose .spread::after  { left: calc(50% + 16px); }
+.prose .spread::before { left: calc(50% - 14px); }
+.prose .spread::after  { left: calc(50% + 14px); }
 
 .prose .spread__figure {
   position: sticky;
@@ -1010,7 +1010,7 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   .prose .spread {
     margin-left: 0;
     margin-right: 0;
-    column-gap: var(--s-7);
+    column-gap: var(--s-6);
   }
   .prose .spread::before { left: calc(50% - 10px); }
   .prose .spread::after  { left: calc(50% + 10px); }
