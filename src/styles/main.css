@@ -1448,6 +1448,9 @@ dialog.lightbox::backdrop {
   backdrop-filter: blur(8px);
   transition: background var(--dur-2) var(--ease), color var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
 }
+.lightbox__nav[hidden] { display: none; }
+.lightbox__counter[hidden],
+.lightbox__caption[hidden] { display: none; }
 .lightbox__close:hover,
 .lightbox__nav:hover {
   background: rgba(247, 244, 238, 0.16);
