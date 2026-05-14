@@ -1,5 +1,7 @@
 # AURA Book Reader — variant "Quiet Authority"
 
+**Live:** [nikit34.github.io/zamesin-book](https://nikit34.github.io/zamesin-book/) · deploys from `main` via GitHub Actions
+
 Design-contest entry for [@zamesin](https://t.me/zamesin/2516)'s book-reader site for the *Advanced Jobs To Be Done* book and the future AURA library.
 
 The chapter you read in the browser is the same `demo-chapter.md` referenced in the brief, translated and adapted into English with the four voices, the gas-station gallery, the case-study quartet and every block type from §7.4 of the brief.
